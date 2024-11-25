@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CHOSEN=$(printf "Lock\nLog Out\nSuspend\nReboot\nPower Off" | rofi -dmenu -i -p "Search: " )
+
+case "$CHOSEN" in
+	"Lock") loginctl lock-session ;;
+	"Log Out") hyprctl dispatch exit ;;
+	"Suspend") systemctl suspend ;;
+	"Reboot") reboot ;;
+	"Power Off") poweroff ;;
+	*) exit 1 ;;
+esac
