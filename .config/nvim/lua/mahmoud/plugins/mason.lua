@@ -1,50 +1,44 @@
 return {
-    "williamboman/mason.nvim",
-    dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
 
-    config = function()
-        -- import mason
-        local mason = require("mason")
+	config = function()
+		-- import mason
+		local mason = require("mason")
 
-        -- import mason-lspconfig
-        local mason_lspconfig = require("mason-lspconfig")
+		-- import mason-lspconfig
+		local mason_lspconfig = require("mason-lspconfig")
 
-        local mason_tool_installer = require("mason-tool-installer")
+		local mason_tool_installer = require("mason-tool-installer")
 
-        mason.setup({
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗",
-                },
-            },
-        })
+		mason.setup({
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
 
-        mason_lspconfig.setup({
-            -- list of servers for mason to install
-            ensure_installed = {
-                "bashls",
-                "clangd",
-                "lua_ls",
-                "marksman",
-                "pyright",
-                "java_language_server"
-            },
-        })
+		mason_lspconfig.setup({
+			-- list of servers for mason to install
+			ensure_installed = {
+				"clangd",
+				"lua_ls",
+				"jdtls",
+			},
+		})
 
-        mason_tool_installer.setup({
-            ensure_installed = {
-                "stylua",
-                "black",
-                "beautysh",
-                "google-java-format",
-                "clang-format",
-            },
-        })
-
-    end,
+		-- Formatters
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"stylua",
+				"clang-format",
+			},
+		})
+	end,
 }

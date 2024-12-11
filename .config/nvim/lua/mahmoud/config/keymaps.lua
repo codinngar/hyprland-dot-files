@@ -2,11 +2,12 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set('i', 'jk', '<ESC>', { desc = "Exit insert mode" })
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
+keymap.set("n", "<leader>a", "ggVG", { noremap = true, silent = true })
 
 -- Quick save and exit
-keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = "Save file" })
-keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = "Quit file" })
+keymap.set("n", "<leader>w", "<cmd>w<CR>", { silent = true, desc = "Save file" })
+keymap.set("n", "<leader>q", "<cmd>q<CR>", { silent = true, desc = "Quit file" })
 
 -- Type commands quickly with ;
 -- keymap.set({ "n", "x" }, ";", ":")
@@ -19,18 +20,18 @@ keymap.set({ "n", "x" }, "H", "^")
 keymap.set({ "n", "x" }, "L", "g_")
 
 -- Change text without putting it into the vim register
-keymap.set("n", "c", '"_c')
-keymap.set("n", "C", '"_C')
-keymap.set("n", "d", '"_d')
-keymap.set("n", "D", '"_D')
-keymap.set("n", "x", '"_x')
-keymap.set("n", "X", '"_X')
+-- keymap.set("n", "c", '"_c')
+-- keymap.set("n", "C", '"_C')
+-- keymap.set("n", "d", '"_d')
+-- keymap.set("n", "D", '"_D')
+-- keymap.set("n", "x", '"_x')
+-- keymap.set("n", "X", '"_X')
 
 -- Move lines up and down
 keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { silent = true, desc = "Move one line down" })
 keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==", { silent = true, desc = "Move one line up" })
-keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { silent = true, desc = "Move multible lines down"})
-keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { silent = true, desc = "Move multible lines up"})
+keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { silent = true, desc = "Move multible lines down" })
+keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { silent = true, desc = "Move multible lines up" })
 
 -- Split windows
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })

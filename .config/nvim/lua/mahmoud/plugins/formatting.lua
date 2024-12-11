@@ -7,12 +7,11 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				markdown = { "prettier" },
+				-- markdown = { "prettier" },
 				lua = { "stylua" },
-				python = { "black" },
-				bash = { "beautysh" },
-				java = { "google-java-format" },
 				cpp = { "clang-format" },
+				c = { "clang-format" },
+				java = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

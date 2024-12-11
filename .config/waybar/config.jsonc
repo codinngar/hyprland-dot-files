@@ -3,9 +3,20 @@
     "margin": 0,
     "spacing": 5,
 
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "custom/space", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["battery", "pulseaudio", "cpu", "network", "temperature", "power-profiles-daemon", "custom/notification", "custom/power"],
+    "modules-right": ["battery", "pulseaudio", "backlight", "cpu", /*"network",*/ "temperature", "power-profiles-daemon", "custom/notification", "custom/power"],
+
+    // Tray
+    "tray": {
+        "spacing": 10
+    },
+
+    // Space
+    "custom/space": {
+       "tooltip": false,
+       "format": "| "
+    },
 
     // Clock
     "clock": {
@@ -33,19 +44,25 @@
 
     // CPU
     "cpu": {
-        "interval": 5,
+        "interval": 10,
         "format": "{icon} {usage}% |",
         "format-icons": ""
     },
-    
+
     // Network
-    "network": {
+    // "network": {
+    //     "tooltip": false,
+    //     "format-wifi": "{icon}  {essid} |",
+    //     "format-icons": [""],
+    //     "format-disconnected": " Wifi |",
+    //     "interval": 10
+    // },
+
+    // Backlight
+    "backlight": {
         "tooltip": false,
-        "format-wifi": "{icon}  {essid} |",
-        "format-icons": [""],
-        "format-disconnected": " Wifi |",
-        "interval": 10,
-        "on-click": "wifi-menu"
+        "format": "{icon} {percent}% |",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
     },
 
     // Temperature
@@ -86,6 +103,7 @@
     // Power
     "custom/power": {
         "format": "",
+        "tooltip": false,
         "on-click": "power-menu"
     }
 

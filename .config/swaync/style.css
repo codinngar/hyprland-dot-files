@@ -23,9 +23,9 @@ slider {
 
 .floating-notifications.background .notification-row .notification-background {
   border-radius: 10px;
-  border: 1px solid #89b4fa;
+  border: 1px solid #ffffff;
   margin: 18px;
-  background-color: #1e1e2e;
+  background-color: #000000;
   color: #ffffff;
   padding: 0;
 }
@@ -99,9 +99,9 @@ slider {
 
 .control-center {
   border-radius: 10px;
-  border: 1px solid #89b4fa;
+  border: 1px solid #ffffff;
   margin: 18px;
-  background-color: #1e1e2e;
+  background-color: #000000;
   color: #cdd6f4;
   padding: 14px;
 }
@@ -149,7 +149,7 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification .notification-content {
-  margin: 7px;
+  margin: 10px;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .summary {
@@ -189,15 +189,15 @@ slider {
 }
 
 .control-center .notification-row .notification-background .close-button {
-  margin: 7px;
-  padding: 2px;
-  border-radius: 6.3px;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
   color: #1e1e2e;
   background-color: #eba0ac;
 }
 
 .close-button {
-  border-radius: 6.3px;
+  border-radius: 6px;
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
