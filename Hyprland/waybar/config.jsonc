@@ -1,0 +1,109 @@
+{
+    "layer": "top",
+    "margin": 0,
+    "spacing": 5,
+
+    "modules-left": ["hyprland/workspaces", "custom/space", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["battery", "pulseaudio", "backlight", "cpu", /*"network",*/ "temperature", /*"power-profiles-daemon",*/ "custom/notification", "custom/power"],
+
+    // Tray
+    "tray": {
+        "spacing": 10
+    },
+
+    // Space
+    "custom/space": {
+       "tooltip": false,
+       "format": "| "
+    },
+
+    // Clock
+    "clock": {
+        "interval": 60,
+        "tooltip": false,
+        "format": "{:%A %d/%m/%Y | %I:%M %p}"
+    },
+
+    // Battery
+    "battery": {
+        "format": "{icon} {capacity}% |",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time}"
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        "format": "{icon} {volume}% |",
+        "format-muted": " |",
+        "format-icons": [""],
+        "scroll-step": 5,
+        "tooltip": false
+    },
+
+    // CPU
+    "cpu": {
+        "interval": 10,
+        "format": "{icon} {usage}% |",
+        "format-icons": ""
+    },
+
+    // Network
+    // "network": {
+    //     "tooltip": false,
+    //     "format-wifi": "{icon}  {essid} |",
+    //     "format-icons": [""],
+    //     "format-disconnected": " Wifi |",
+    //     "interval": 10
+    // },
+
+    // Backlight
+    "backlight": {
+        "tooltip": false,
+        "format": "{icon} {percent}% |",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    // Temperature
+    "temperature": {
+        "interval": 60,
+        "tooltip": false,
+        "format": " {temperatureC}° |"
+    },
+
+    // Power Profiles Daemon
+    // "power-profiles-daemon": {
+    //     "format": "{icon} |",
+    //     "tooltip-format": "{profile}",
+    //     "tooltip": true,
+    //     "format-icons": {
+    //         "performance": "",
+    //         "balanced": "",
+    //         "power-saver": ""
+    //     }
+    // },
+
+    // Notifications
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} |",
+        "format-icons": {
+            "notification": "󰅸",
+            "none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click-right": "swaync-client -d -sw",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    // Power
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "power-menu"
+    }
+
+}
